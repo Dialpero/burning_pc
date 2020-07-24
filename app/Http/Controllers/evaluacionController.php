@@ -100,29 +100,9 @@ class evaluacionController extends Controller
             array_push($promedios, $dato->promedio);
         }
         
-<<<<<<< HEAD
-<<<<<<< HEAD
-        $chart_bar->labels(["Académicos"]);
-
-        if(count($label) === 0){
-            $chart_bar->dataset("No existen académicos o evaluaciones aún!", 'bar', [0]);
-        }
-        else{
-            for ($i=0; $i < count($label); $i++) { 
-                $color = 'rgba('. implode(",",array(rand(0, 255),rand(0, 255),rand(0, 255),0.7)). ')';
-                $chart_bar->dataset((string)$label[$i]. ". Promedio", 'bar', [$promedios[$i]])->backgroundColor($color);
-            }
-        }
-=======
         $chart_bar->labels($label);
         $chart_bar->dataset("Promedio", 'bar', $promedios)->backgroundColor('rgba(0,100,255,0.5)');
          
->>>>>>> 6d6c209... Se realizo la interfaz de producto
-=======
-        $chart_bar->labels($label);
-        $chart_bar->dataset("Promedio", 'bar', $promedios)->backgroundColor('rgba(0,100,255,0.5)');
-         
->>>>>>> 6d6c209aea32bb5c4d4d93dab1a346837083e752
 
         //Gráfico 3  
         $chart_pie = new UserChart;
