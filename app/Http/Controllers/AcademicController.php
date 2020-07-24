@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Academic;
 use App\evaluacion;
+use App\departamento;
 use App\Http\Requests\SaveEvaluacionRequest;
 use App\Http\Requests\SaveAcademicRequest;
 use Illuminate\Http\Request;
+use App\Exports\EvaluacionesExport;
+use Maatwebsite\Excel\Facades\Excel; 
+use App\Charts\UserChart;
+use Illuminate\Support\Facades\Auth;
 
 class AcademicController extends Controller
 {
@@ -23,10 +28,25 @@ class AcademicController extends Controller
     public function index()
     {
         //$portafolio = DB::table('academics')->get(); // Sin crear archivo 'academic.php'
-
+        if(Auth::user()->estado == 'activo'){
+            if(Auth::user()->typeuser == 'Secretaria'){ 
+                $id = Auth::user()->id; //Obtiene id de secretario actual logeado
+                $depto = departamento::where('id_Secretaria', $id)->get(); //obtiene el depto de la secretaria
+                $deptoAcademico = $depto[0]['id_Dept'];
+                return view('academics.index', [
+                    'academics' => Academic::where('depto', $deptoAcademico)->latest()->paginate(8) 
+                ]);
+            }
+        }
+        elseif(Auth::user()->typeuser == 'Administrador') {
+            return view('academics.index', [
+                'academics' => Academic::latest()->paginate(8) 
+            ]);
+        }
         return view('academics.index', [
-            'academics' => Academic::latest()->paginate()
+            'academics' => Academic::where('id', 0)->latest()->paginate(8) 
         ]);
+        
     }
 
     public function show($id)
@@ -40,15 +60,48 @@ class AcademicController extends Controller
                 $concatenated = $collection->concat($concatenated)->concat([$evaluacion]);
             }      
         }
+        //Grafico 1
+
+        // Instanciamos el objeto gráfico 
+        $chart = new UserChart;
+
+        // Añadimos las etiquetas del eje X
+        $label = array();
+        $calificaciones = array();
+        foreach($concatenated as $dato){
+            if(empty($concatenated)){
+                break;
+            }
+            array_push($label, $dato->id);
+            array_push($calificaciones, $dato->calificacion_final);
+        }
+        
+        $chart->labels($label);
+        $chart->dataset("Calificación", 'bar', $calificaciones)->backgroundColor('rgba(0,0,255,0.5)');
+
         return view('academics.show',[
             'academic' => Academic::findOrFail($id),
-            'concatenated' => $concatenated
+            'concatenated' => $concatenated,
+            'chart' => $chart
         ]);
     }
     public function create()
     {
+        if(Auth::user()->estado == 'activo'){
+            if(Auth::user()->typeuser == 'Secretaria'){ 
+                $id = Auth::user()->id; //Obtiene id de secretario actual logeado
+                $depto = departamento::where('id_Secretaria', $id)->get(); //obtiene el depto de la secretaria
+                $deptoAcademico = $depto[0]['id_Dept'];
+                return view('academics.create', [
+                    'academic' => new Academic,
+                    'depto_secretario' => $deptoAcademico
+                ]);
+        
+            }
+        }
         return view('academics.create', [
-            'academic' => new Academic
+            'academic' => new Academic,
+            'deptoAcademico' => departamento::get()
         ]);
     }
 
@@ -59,6 +112,18 @@ class AcademicController extends Controller
     }
     public function edit(Academic $academic)
     {
+        if(Auth::user()->estado == 'activo'){
+            if(Auth::user()->typeuser == 'Secretaria'){ 
+                $id = Auth::user()->id; //Obtiene id de secretario actual logeado
+                $depto = departamento::where('id_Secretaria', $id)->get(); //obtiene el depto de la secretaria
+                $deptoAcademico = $depto[0]['id_Dept'];
+                return view('academics.edit', [
+                    'academic' =>  $academic,
+                    'depto_secretario' => $deptoAcademico
+                ]);
+        
+            }
+        }
         return view('academics.edit',[ 
             'academic' =>  $academic
         ]);
@@ -80,5 +145,16 @@ class AcademicController extends Controller
         }
         $academic->delete();
         return redirect()->route('academics.index')->with('status', 'El académico fue eliminado con éxito');  
+    }
+
+    public function export($rut) 
+    {
+        //$resumen = new EvaluacionesExport;
+        //return $resumen->download('pautaResumen.xlsx');
+
+        $resumen = evaluacion::where('rut_academico', '=', $rut)->get();
+ 
+        return (new evaluacionesExport($resumen))->download('pautaResumen.xlsx');
+
     }
 }
