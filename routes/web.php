@@ -20,10 +20,6 @@ Route::get('/export/{academic}', 'academicController@export')->name('academics.e
 Route::view('/contacto', 'contact')->name('contact');
 Route::post('contact','MessageController@store')->name('messages.store');
 
-<<<<<<< HEAD
-=======
-
-
 //-------------------------------------PRODUCTOS---------------------------------------------------
 Route::get('productos/producto', 'ProductoController@index')->name('mostrar_producto');
 
@@ -40,7 +36,6 @@ Route::delete('productos/eliminar/{id}', 'ProductoController@destroy')->name('el
 
 
 
->>>>>>> 6d6c209... Se realizo la interfaz de producto
 //-------------------------------------FACULTADES---------------------------------------------------
 Route::get('/facultades/{facultad}/indiv', 'facultadController@indiv')->name('facultades.indiv');
 //-----------------------------Insertar------------------------------------------------------------
