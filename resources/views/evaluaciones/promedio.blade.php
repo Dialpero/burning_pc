@@ -26,8 +26,11 @@
           <!-- == string === int -->
         <li class="list-group-item border-0 mb-9 shadow-sm">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <span class="font-weight-bold text-secondary">
 =======
+=======
+>>>>>>> 6d6c209aea32bb5c4d4d93dab1a346837083e752
             <span class="font-weight-bold">
 >>>>>>> 6d6c209... Se realizo la interfaz de producto
                 @if($iter === 1)

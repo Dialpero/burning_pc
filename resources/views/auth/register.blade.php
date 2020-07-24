@@ -46,16 +46,22 @@
                                 <select id="typeuser" type="typeuser" class="form-control @error('typeuser') is-invalid @enderror" name="typeuser" value="{{ old('typeuser') }}" required autocomplete="typeuser">
                                     <option> Administrador </option>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <option> Secretaria </option>
                                     <option> Decano </option>
                                     <option> Miembro comision evaluadora </option>
                                     <option> Director de escuela </option>
 =======
+=======
+>>>>>>> 6d6c209aea32bb5c4d4d93dab1a346837083e752
                                     <option> Cliente</option>
                                     <option> Encargado de ventas </option>
                                     <option> Encargado de inventario </option>
                                     <option> Ensamblador</option>
+<<<<<<< HEAD
 >>>>>>> 6d6c209... Se realizo la interfaz de producto
+=======
+>>>>>>> 6d6c209aea32bb5c4d4d93dab1a346837083e752
                                 </select>
                                 </label>
                                 @error('typeuser')

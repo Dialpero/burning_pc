@@ -43,10 +43,13 @@
             Descargar Archivo PDF
         </a>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <a href="javascript:window.history.back();" class="btn btn-sm btn-primary">
             Regresar
         </a>
 =======
 >>>>>>> 6d6c209... Se realizo la interfaz de producto
+=======
+>>>>>>> 6d6c209aea32bb5c4d4d93dab1a346837083e752
     </p>
 @endsection

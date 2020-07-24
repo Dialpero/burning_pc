@@ -18,6 +18,7 @@
         </p>
         <div class="d-flex justify-content-between align-items-left">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <table class="table table-striped">
         <thead>
                 <tr>
@@ -68,6 +69,8 @@
         </div>
         <p class="text-secondary">
 =======
+=======
+>>>>>>> 6d6c209aea32bb5c4d4d93dab1a346837083e752
         <p class="text-secondary">
         --------------------------------------------<br>
         Actividades de docencia<br>

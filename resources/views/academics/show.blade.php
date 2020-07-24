@@ -11,7 +11,10 @@
             <h1> {{ $academic->nombre_1 }} {{ $academic->apellido_1 }} </h1>  
 =======
             <h1> {{ $academic-> rut}} </h1>  
+<<<<<<< HEAD
 >>>>>>> 6d6c209... Se realizo la interfaz de producto
+=======
+>>>>>>> 6d6c209aea32bb5c4d4d93dab1a346837083e752
             <form method="POST" action="{{ route('evaluaciones.promedio') }}" class="was-validated">
                 @csrf @method('PATCH')
                 <button type="submit" class="btn btn-warning">Ver ranking</button>
@@ -87,9 +90,13 @@
                 <script src="/js/Chart.min.js" charset="utf-8"></script>
                 {{ $chart->script() }}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 <p class="text-secondary" align="center"> ID Pauta </p>
 >>>>>>> 6d6c209... Se realizo la interfaz de producto
+=======
+                <p class="text-secondary" align="center"> ID Pauta </p>
+>>>>>>> 6d6c209aea32bb5c4d4d93dab1a346837083e752
             </div>
             </div>
             
