@@ -53,6 +53,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     
 </head>
 <body>
@@ -73,16 +74,77 @@
     <footer class="bg-with text-center text-black-50 py-3 shadow">
         <!-- Add font awesome icons -->
 
-            <a href="https://www.facebook.com/ucatolicadelmaule/" class="fa fa-facebook  btn-sm"   alt="Cinque Terre"></a>
-            <a href="https://twitter.com/ucatolicamaule" class="fa fa-twitter btn-sm" alt="Cinque Terre"></a>
-            <a href="https://www.linkedin.com/edu/universidad-cat%C3%B3lica-del-maule-10952" class="fa fa-linkedin btn-sm"   alt="Cinque Terre"></a>
-            <a href="https://www.youtube.com/channel/UCI6mMQ5izHQa9MvWUAUV_Eg" class="fa fa-youtube btn-sm"   alt="Cinque Terre"></a>
-            <a href="https://www.instagram.com/ucatolicamaule/" class="fa fa-instagram btn-sm"   alt="Cinque Terre"></a>
 
 
-        {{ config('app.name') }} | Copyright @ {{ date('Y') }}
-    </footer>
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+  
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+    <!-- Grid row -->
+    <div class="row mt-3">
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <a class="navbar-brand" href="{{ route('home') }}">
+          <div  style="width:200px">
+            <img src="{{asset('logo.png')}}" class="img-fluid" alt="Responsive image">
+          </div>
+        </a>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">Quienes somos</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>Somos un grupo de trabajo nuevo con una limitada trayectoria en el desarrollo web, pero no así nuestro entusiasmo por aprender y aportar al desarrollo humano y tecnológico, como esta herramienta, que facilita el acceso a información muy solicitada lo que significa un ahorro de tiempo y dinero.</p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i> Talca, Chile</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> Contacto@PcBurning.cl</p>
+        <p>
+          <i class="fas fa-phone mr-3"></i> + 569 93456788</p>
+        <p>
+          <i class="fas fa-phone mr-3"></i> + 569 23456789</p>
+      </div>
+      <!-- Grid column -->
     </div>
+    <!-- Grid row -->
+  </div>
+  <!-- Footer Links -->
+  
+      <div class="bg-danger">
+        <div class="container bg-danger">
+          <!-- Grid row-->
+          <div class="row py-4 d-flex align-items-center">
+            <!-- Grid column -->
+            <div class="col-md-6 col-lg-10 text-center text-md-left mb-4 mb-md-0">
+              <h6 class="mb-0 text-light">Conectate con nosotros en nuestras redes sociales!</h6>
+            </div>
+            <!-- Grid column -->
+            <a href="https://www.facebook.com/ucatolicadelmaule/" class="fab fa-facebook  btn-sm "   alt="Cinque Terre"></a>
+            <a href="https://twitter.com/ucatolicamaule" class="fab fa-twitter btn-sm" alt="Cinque Terre"></a>
+            <a href="https://www.linkedin.com/edu/universidad-cat%C3%B3lica-del-maule-10952" class="fab fa-linkedin btn-sm"   alt="Cinque Terre"></a>
+            <a href="https://www.youtube.com/channel/UCI6mMQ5izHQa9MvWUAUV_Eg" class="fab fa-youtube btn-sm"   alt="Cinque Terre"></a>
+            <a href="https://www.instagram.com/ucatolicamaule/" class="fab fa-instagram btn-sm"   alt="Cinque Terre"></a>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row-->
+        </div>
+      </div>
+      
+      {{ config('app.name') }} | Copyright @ {{ date('Y') }}    
+    </footer>
 </body>
 </html>
             

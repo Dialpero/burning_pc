@@ -42,8 +42,11 @@
         <a href="{{ route('evaluacionesp.pdf', $academic[0]->rut) }}" class="btn btn-sm btn-primary">
             Descargar Archivo PDF
         </a>
+<<<<<<< HEAD
         <a href="javascript:window.history.back();" class="btn btn-sm btn-primary">
             Regresar
         </a>
+=======
+>>>>>>> 6d6c209... Se realizo la interfaz de producto
     </p>
 @endsection

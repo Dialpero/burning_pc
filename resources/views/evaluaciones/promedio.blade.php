@@ -25,7 +25,11 @@
         
           <!-- == string === int -->
         <li class="list-group-item border-0 mb-9 shadow-sm">
+<<<<<<< HEAD
             <span class="font-weight-bold text-secondary">
+=======
+            <span class="font-weight-bold">
+>>>>>>> 6d6c209... Se realizo la interfaz de producto
                 @if($iter === 1)
                     Rut: {{ $academic->rut }} || Nombre: {{$academic->nombre_1}} {{$academic->apellido_1}} || Departamento: {{$academic->depto}} || Nota: {{ $academic->promedio }} 
                        <img src="{{asset('primero.png')}}" style="float:left; margin:10px;" alt="Responsive image"><br>      

@@ -100,6 +100,7 @@ class evaluacionController extends Controller
             array_push($promedios, $dato->promedio);
         }
         
+<<<<<<< HEAD
         $chart_bar->labels(["Académicos"]);
 
         if(count($label) === 0){
@@ -111,6 +112,11 @@ class evaluacionController extends Controller
                 $chart_bar->dataset((string)$label[$i]. ". Promedio", 'bar', [$promedios[$i]])->backgroundColor($color);
             }
         }
+=======
+        $chart_bar->labels($label);
+        $chart_bar->dataset("Promedio", 'bar', $promedios)->backgroundColor('rgba(0,100,255,0.5)');
+         
+>>>>>>> 6d6c209... Se realizo la interfaz de producto
 
         //Gráfico 3  
         $chart_pie = new UserChart;

@@ -45,10 +45,17 @@
                                 <label for="typeuser" class="col-md-6 col-form-label text-md-right">{{ __('Tipo de usuario') }}
                                 <select id="typeuser" type="typeuser" class="form-control @error('typeuser') is-invalid @enderror" name="typeuser" value="{{ old('typeuser') }}" required autocomplete="typeuser">
                                     <option> Administrador </option>
+<<<<<<< HEAD
                                     <option> Secretaria </option>
                                     <option> Decano </option>
                                     <option> Miembro comision evaluadora </option>
                                     <option> Director de escuela </option>
+=======
+                                    <option> Cliente</option>
+                                    <option> Encargado de ventas </option>
+                                    <option> Encargado de inventario </option>
+                                    <option> Ensamblador</option>
+>>>>>>> 6d6c209... Se realizo la interfaz de producto
                                 </select>
                                 </label>
                                 @error('typeuser')

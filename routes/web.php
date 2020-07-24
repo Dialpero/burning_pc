@@ -20,6 +20,27 @@ Route::get('/export/{academic}', 'academicController@export')->name('academics.e
 Route::view('/contacto', 'contact')->name('contact');
 Route::post('contact','MessageController@store')->name('messages.store');
 
+<<<<<<< HEAD
+=======
+
+
+//-------------------------------------PRODUCTOS---------------------------------------------------
+Route::get('productos/producto', 'ProductoController@index')->name('mostrar_producto');
+
+Route::get('productos/ingresar', 'ProductoController@create')->name('ingresar_producto');
+
+Route::post('productos/ingresar', 'ProductoController@store')->name('crear_producto');
+
+Route::get('productos/editar/{id}', 'ProductoController@edit')->name('editar_producto');
+
+Route::put('productos/editar/{id}', 'ProductoController@update')->name('producto_update');
+
+Route::delete('productos/eliminar/{id}', 'ProductoController@destroy')->name('eliminar_producto');
+
+
+
+
+>>>>>>> 6d6c209... Se realizo la interfaz de producto
 //-------------------------------------FACULTADES---------------------------------------------------
 Route::get('/facultades/{facultad}/indiv', 'facultadController@indiv')->name('facultades.indiv');
 //-----------------------------Insertar------------------------------------------------------------

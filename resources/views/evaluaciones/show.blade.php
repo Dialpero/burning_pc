@@ -17,6 +17,7 @@
                 Observación anterior: {{ $evaluacion->observacion_anterior }} <br>
         </p>
         <div class="d-flex justify-content-between align-items-left">
+<<<<<<< HEAD
         <table class="table table-striped">
         <thead>
                 <tr>
@@ -66,6 +67,38 @@
 
         </div>
         <p class="text-secondary">
+=======
+        <p class="text-secondary">
+        --------------------------------------------<br>
+        Actividades de docencia<br>
+        Actividades de de investigación<br>
+        Actividades de Extensión y vinculación<br>
+        Actividades de administración<br>
+        Otras actividades<br>
+        </p>
+        <p class="text-secondary">
+        % de Tiempo<br>
+                {{ $evaluacion->docencia_tiempo }}<br>
+                {{ $evaluacion->investigacion_tiempo }} <br>
+                {{ $evaluacion->extension_tiempo }} <br>
+                {{ $evaluacion->administracion_tiempo }} <br>
+                {{ $evaluacion->otras_tiempo }} <br>
+        </p>
+        <p class="text-secondary">
+        Nota<br>
+                {{ $evaluacion->docencia_nota }} <br>
+                {{ $evaluacion->investigacion_nota }} <br>
+                {{ $evaluacion->extension_nota }} <br>
+                {{ $evaluacion->administracion_nota }} <br>
+                {{ $evaluacion->otras_nota }} <br>
+        </p>
+    
+
+        </div>
+        <p class="text-secondary">
+                Calificacion: {{ $evaluacion->calificacion_final }}<br>
+                Observación: {{ $evaluacion->observacion_final }} <br>
+>>>>>>> 6d6c209... Se realizo la interfaz de producto
                 Fecha de evaluación: {{ $evaluacion->created_at->format('d/m/Y')}} 
         </p>
         <p class="text-black-50"> {{ $evaluacion->created_at->diffForHumans() }} </p>

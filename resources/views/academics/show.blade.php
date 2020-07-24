@@ -7,7 +7,11 @@
 <div class="container">
     <div class="bg-white p-5 shadow rounded">
         <div class="d-flex justify-content-between align-items-center">
+<<<<<<< HEAD
             <h1> {{ $academic->nombre_1 }} {{ $academic->apellido_1 }} </h1>  
+=======
+            <h1> {{ $academic-> rut}} </h1>  
+>>>>>>> 6d6c209... Se realizo la interfaz de producto
             <form method="POST" action="{{ route('evaluaciones.promedio') }}" class="was-validated">
                 @csrf @method('PATCH')
                 <button type="submit" class="btn btn-warning">Ver ranking</button>
@@ -82,6 +86,10 @@
                 {{ $chart->container() }}
                 <script src="/js/Chart.min.js" charset="utf-8"></script>
                 {{ $chart->script() }}
+<<<<<<< HEAD
+=======
+                <p class="text-secondary" align="center"> ID Pauta </p>
+>>>>>>> 6d6c209... Se realizo la interfaz de producto
             </div>
             </div>
             

@@ -76,6 +76,7 @@ class AcademicController extends Controller
             array_push($calificaciones, $dato->calificacion_final);
         }
         
+<<<<<<< HEAD
         $chart->labels(["Pautas"]);
         if(count($label) === 0){
             $chart->dataset("Académico sin evaluaciones aun!", 'bar', [0]);
@@ -86,6 +87,11 @@ class AcademicController extends Controller
                 $chart->dataset("ID Pauta ".(string)$label[$i]. ". Nota", 'bar', [$calificaciones[$i]])->backgroundColor($color);
             }
         }
+=======
+        $chart->labels($label);
+        $chart->dataset("Calificación", 'bar', $calificaciones)->backgroundColor('rgba(0,0,255,0.5)');
+
+>>>>>>> 6d6c209... Se realizo la interfaz de producto
         return view('academics.show',[
             'academic' => Academic::findOrFail($id),
             'concatenated' => $concatenated,
