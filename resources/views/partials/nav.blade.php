@@ -59,6 +59,7 @@
     <li class="nav-item">
       <a class="nav-link text-light" href="{{ route('academics.index') }}">Confirmar stock</a>
     </li>
+    <br/>
     <li class="nav-item">
       <a class="navbar-brand" href="{{ route('departamentos.show') }}">
         <div  style="width:35px">
@@ -70,12 +71,15 @@
     <li class="nav-item">
       <a class="nav-link text-light" href="{{ route('facultades.show') }}">Reviews</a>
     </li>
-  @elseif(Auth::user()->typeuser=='cliente')
+  @elseif(Auth::user()->typeuser=='Cliente')
   <li class="nav-item">
-      <a class="nav-link text-light " href="{{ route('mostrar_producto') }}">Equipos</a>
+      <a class="nav-link text-light " href="{{ route('mostrar_producto') }}">Pc Armados</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link text-light" href="{{ route('facultades.show') }}">Reviews</a>
+    <li class="nav-item pull-right">
+      <a class="nav-link text-light" href="{{ route('mostrar_producto') }}">Ver Productos</a>
+    </li>
+    <li class="nav-item pull-right">
+      <a class="nav-link text-light" href="{{ route('contact') }}">Dudas y/o Reclamos</a>
     </li>
     <li class="nav-item">
       <a class="navbar-brand" href="{{ route('departamentos.show') }}">
@@ -108,10 +112,10 @@
 <!-- VISTA PARA CUANDO NO SE ESTE LOGEADO -->
 @else
     <li class="nav-item">
-      <a class="nav-link text-light " href="{{ route('mostrar_producto') }}">Equipos</a>
+      <a class="nav-link text-light " href="{{ route('mostrar_producto') }}">Pc Armados</a>
     </li>
     <li class="nav-item pull-right">
-      <a class="nav-link text-light" href="{{ route('facultades.show') }}">Reviews</a>
+      <a class="nav-link text-light" href="{{ route('mostrar_producto') }}">Ver Productos</a>
     </li>
     
     <li class="nav-item">

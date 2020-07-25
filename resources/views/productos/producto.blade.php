@@ -11,11 +11,11 @@
         <div class="d-flex justify-content-between align-items-center">
         <h1 class="text-danger">Productos On-fire!</h1>
         @auth
-        @if(Auth::user()->estado=='activo' or Auth::user()->typeuser=='Administrador')
-        <div class="btn-group btn-group-sm">
-            <a class="btn btn-primary" href="{{ route('ingresar_producto') }}">Ingresar nuevo producto</a> 
-        </div>
-        @endif
+            @if(Auth::user()->typeuser=='Administrador')
+            <div class="btn-group btn-group-sm">
+                <a class="btn btn-primary" href="{{ route('ingresar_producto') }}">Ingresar nuevo producto</a> 
+            </div>
+            @endif
         @endauth
         </div>
 

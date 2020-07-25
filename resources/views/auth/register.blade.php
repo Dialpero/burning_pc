@@ -44,24 +44,13 @@
                             <div class="form-group">
                                 <label for="typeuser" class="col-md-6 col-form-label text-md-right">{{ __('Tipo de usuario') }}
                                 <select id="typeuser" type="typeuser" class="form-control @error('typeuser') is-invalid @enderror" name="typeuser" value="{{ old('typeuser') }}" required autocomplete="typeuser">
-                                    <option> Administrador </option>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                    <option> Secretaria </option>
-                                    <option> Decano </option>
-                                    <option> Miembro comision evaluadora </option>
-                                    <option> Director de escuela </option>
-=======
-=======
->>>>>>> 6d6c209aea32bb5c4d4d93dab1a346837083e752
-                                    <option> Cliente</option>
+                                    <option> Cliente </option>
+
+                                    <option> Administrador</option>
                                     <option> Encargado de ventas </option>
                                     <option> Encargado de inventario </option>
                                     <option> Ensamblador</option>
-<<<<<<< HEAD
->>>>>>> 6d6c209... Se realizo la interfaz de producto
-=======
->>>>>>> 6d6c209aea32bb5c4d4d93dab1a346837083e752
+
                                 </select>
                                 </label>
                                 @error('typeuser')
@@ -72,7 +61,7 @@
 
                                 <label for="estado" class="col-md-5 col-form-label text-md-right" >{{ __('Estado') }}
                                 <select id="estado" type="estado" class="form-control @error('estado') is-invalid @enderror" name="estado" value="Inactivo" required autocomplete="estado">
-                                    <option> Inactivo </option>
+                                    <option> activo </option>
                                 </select>
                                 </label>
                                 @error('estado')

@@ -47,9 +47,11 @@
                 <label for="Imagen">{{'Imagen'}}</label>
                 <input type = "file" name="Imagen" class="form-control mb-2" value="{{old('Imagen')}}">
 
-           
-
-                <button class="btn btn-warning btn-lg btn-block" type="submit">Agregar producto</button>
+                @auth
+                    @if(Auth::user()->typeuser=='Administrador')
+                        <button class="btn btn-warning btn-lg btn-block" type="submit">Agregar producto</button>
+                    @endif
+                @endauth
                 <a href="{{route('mostrar_producto')}}" class="btn btn btn-outline-dark btn-lg btn-block">Cancelar</a>
             </form>
         </div>

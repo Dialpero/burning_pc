@@ -12,7 +12,7 @@
             <h1 class="display-4 mb-0">Facultades</h1>
         
         @auth
-        @if(Auth::user()->typeuser=='Administrador')
+        @if(Auth::user()->typeuser=='Cliente')
             <a class="btn btn-primary" href="{{ route('facultades.add_facultad') }}">Ingresar Facultad</a> 
         @endif
         @endauth

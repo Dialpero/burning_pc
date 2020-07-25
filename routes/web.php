@@ -19,12 +19,9 @@ Route::get('/export/{academic}', 'academicController@export')->name('academics.e
 
 Route::view('/contacto', 'contact')->name('contact');
 Route::post('contact','MessageController@store')->name('messages.store');
-
-<<<<<<< HEAD
-=======
+route::get('/contact/mostrar','MessageController@mostrar')->name('message.mostrar');
 
 
->>>>>>> 6d6c209aea32bb5c4d4d93dab1a346837083e752
 //-------------------------------------PRODUCTOS---------------------------------------------------
 Route::get('productos/producto', 'ProductoController@index')->name('mostrar_producto');
 
