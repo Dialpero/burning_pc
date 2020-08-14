@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Producto;
+use App\carrito;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -36,7 +37,8 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        
+        $request->validate([ 
             'Nombre'=>'required',
             'Descripción'=>'required',
             'Precio'=>'required',
@@ -44,7 +46,6 @@ class ProductoController extends Controller
             'Tipo_producto'=>'required',
             'Imagen'=>'required'
         ]);
-
         $newProducto = new Producto;
         $newProducto->Nombre = $request->Nombre;
         $newProducto->Descripción = $request->Descripción;

@@ -10,14 +10,9 @@
 
         <div class="d-flex justify-content-between align-items-center">
         <h1 class="text-danger">Productos On-fire!</h1>
-        @auth
-            @if(Auth::user()->typeuser=='Administrador')
-            <div class="btn-group btn-group-sm">
-                <a class="btn btn-primary" href="{{ route('ingresar_producto') }}">Ingresar nuevo producto</a> 
-            </div>
-            @endif
-        @endauth
+   
         </div>
+        
 
         <div class="row row-cols-1 row-cols-md-4">
         
@@ -34,22 +29,36 @@
                             @endif
                         </div>
                         <div class="detail-container"> 
-                            {{$item->Descripción}}
+                            Descripción: {{$item->Descripción}}
+                        </div>
+                        <div class="detail-container">
+                            Código: {{$item->id}}
+                        </div>
+                        <div class="detail-container"> 
+                            Stock Disponible: {{$item->Cantidad}}
                         </div>
                         <div class="price-container mt-auto">
                             <h4>${{$item->Precio}}</h4>
                         </div>
-
-                        <button type="button" class="btn btn-info">Agregar al carrito</button>
-
+                        
+  
                         @auth
-                        @if(Auth::user()->estado=='activo' or Auth::user()->typeuser=='Administrador')
-                            <a href="{{route('editar_producto', $item)}}" class="btn btn-warning ">Editar</a>
+                            @if($item->Cantidad > 0)
+                                @if(Auth::user()->typeuser == 'Cliente')
+                                    <a href="{{route('carrito.agregar', $item)}}" class="btn btn-primary ">Agregar al carrito</a>
+                                @endif
+                            {{--<a href="{{route('ingresar_review', $item)}}" class="btn btn-secondary ">Agregar review</a>--}}
+                            <a href="{{route('mostrar_review', $item)}}" class="btn btn-warning ">Ver reviews</a>
+                            @else
+                            <a href="" class="btn btn-primary ">Stock Insuficiente</a>
+                            @endif
+                            @if(Auth::user()->typeuser=='Administrador')
+                            <a href="{{route('editar_producto', $item)}}" class="btn btn-secondary ">Editar</a>
                             
                             <form action="{{route('eliminar_producto', $item)}}" method="POST" class="d-inline">
                                 @method('DELETE')
                                 @csrf
-                                <button class="btn btn-danger btn-block" type="submit" onclick="return confirm('¿Borrar producto?') ">Eliminar</button>
+                                <button class="btn navbar-custom btn-block" type="submit" onclick="return confirm('¿Borrar producto?') ">Eliminar</button>
                             </form>     
                         @endif
                         @endauth
